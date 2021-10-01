@@ -29592,6 +29592,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 const spaces = {
+  none: "none",
   xxxs: "xxxs",
   // 4px
   xxs: "xxs",
@@ -29686,14 +29687,62 @@ const Text = ({
   size = _foundation.FontSize.md,
   children
 }) => {
-  const className = `dse-text-${size}`;
+  const className = `dse-text dse-text-${size}`;
   return _react.default.createElement("p", {
     className: className
   }, children);
 };
 
 exports.default = Text;
-},{"react":"../../../node_modules/react/index.js","@ds.e/foundation":"../../../node_modules/@ds.e/foundation/lib/index.js"}],"../../../node_modules/@ds.e/react/lib/index.js":[function(require,module,exports) {
+},{"react":"../../../node_modules/react/index.js","@ds.e/foundation":"../../../node_modules/@ds.e/foundation/lib/index.js"}],"../../../node_modules/@ds.e/react/lib/atoms/Margin/Margin.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const Margin = ({
+  space = "xxxs",
+  children,
+  left,
+  right,
+  top,
+  bottom
+}) => {
+  let className = ``;
+
+  if (!left && !right && !top && !bottom) {
+    className = `dse-margin-${space}`;
+  }
+
+  if (left) {
+    className = `${className} dse-margin-left-${space}`;
+  }
+
+  if (right) {
+    className = `${className} dse-margin-right-${space}`;
+  }
+
+  if (top) {
+    className = `${className} dse-margin-top-${space}`;
+  }
+
+  if (bottom) {
+    className = `${className} dse-margin-bottom-${space}`;
+  }
+
+  return _react.default.createElement("div", {
+    className: className
+  }, children);
+};
+
+exports.default = Margin;
+},{"react":"../../../node_modules/react/index.js"}],"../../../node_modules/@ds.e/react/lib/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29711,13 +29760,21 @@ Object.defineProperty(exports, "Text", {
     return _Text.default;
   }
 });
+Object.defineProperty(exports, "Margin", {
+  enumerable: true,
+  get: function () {
+    return _Margin.default;
+  }
+});
 
 var _Color = _interopRequireDefault(require("./atoms/Color/Color.js"));
 
 var _Text = _interopRequireDefault(require("./atoms/Text/Text.js"));
 
+var _Margin = _interopRequireDefault(require("./atoms/Margin/Margin.js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./atoms/Color/Color.js":"../../../node_modules/@ds.e/react/lib/atoms/Color/Color.js","./atoms/Text/Text.js":"../../../node_modules/@ds.e/react/lib/atoms/Text/Text.js"}],"../../../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"./atoms/Color/Color.js":"../../../node_modules/@ds.e/react/lib/atoms/Color/Color.js","./atoms/Text/Text.js":"../../../node_modules/@ds.e/react/lib/atoms/Text/Text.js","./atoms/Margin/Margin.js":"../../../node_modules/@ds.e/react/lib/atoms/Margin/Margin.js"}],"../../../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -29796,6 +29853,18 @@ module.exports = reloadCSS;
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
+},{"_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../node_modules/@ds.e/scss/lib/Margin.css":[function(require,module,exports) {
+
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+},{"_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../node_modules/@ds.e/scss/lib/global.css":[function(require,module,exports) {
+
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
 },{"_css_loader":"../../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.tsx":[function(require,module,exports) {
 "use strict";
 
@@ -29809,12 +29878,19 @@ require("@ds.e/scss/lib/Utilities.css");
 
 require("@ds.e/scss/lib/Text.css");
 
+require("@ds.e/scss/lib/Margin.css");
+
+require("@ds.e/scss/lib/global.css");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom.default.render(_react.default.createElement(_react2.Text, {
+_reactDom.default.render(_react.default.createElement("div", null, _react.default.createElement(_react2.Margin, {
+  left: true,
+  space: "xl"
+}, _react.default.createElement(_react2.Text, {
   size: "xs"
-}, "This is some text"), document.getElementById("root"));
-},{"react":"../../../node_modules/react/index.js","react-dom":"../../../node_modules/react-dom/index.js","@ds.e/react":"../../../node_modules/@ds.e/react/lib/index.js","@ds.e/scss/lib/Utilities.css":"../../../node_modules/@ds.e/scss/lib/Utilities.css","@ds.e/scss/lib/Text.css":"../../../node_modules/@ds.e/scss/lib/Text.css"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+}, "This is some text"))), document.getElementById("root"));
+},{"react":"../../../node_modules/react/index.js","react-dom":"../../../node_modules/react-dom/index.js","@ds.e/react":"../../../node_modules/@ds.e/react/lib/index.js","@ds.e/scss/lib/Utilities.css":"../../../node_modules/@ds.e/scss/lib/Utilities.css","@ds.e/scss/lib/Text.css":"../../../node_modules/@ds.e/scss/lib/Text.css","@ds.e/scss/lib/Margin.css":"../../../node_modules/@ds.e/scss/lib/Margin.css","@ds.e/scss/lib/global.css":"../../../node_modules/@ds.e/scss/lib/global.css"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -29842,7 +29918,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44223" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39599" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
