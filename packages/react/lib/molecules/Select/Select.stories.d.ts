@@ -2,6 +2,7 @@
 import "@ds.e/scss/lib/Select.css";
 declare const _default: {
     title: string;
+    decorators: import("@storybook/addons").DecoratorFunction<unknown>[];
 };
 export default _default;
 export declare const Common: () => JSX.Element;

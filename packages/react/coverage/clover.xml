@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1633259673825" clover="3.2.0">
+  <project timestamp="1633259673825" name="All files">
+    <metrics statements="70" coveredstatements="41" conditionals="54" coveredconditionals="24" methods="19" coveredmethods="12" elements="143" coveredelements="77" complexity="0" loc="70" ncloc="70" packages="2" files="3" classes="3"/>
+    <package name="atoms.Text">
+      <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="Text.tsx" path="/home/thanhlam/Desktop/packages/packages/react/src/atoms/Text/Text.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="40" type="stmt"/>
+        <line num="11" count="40" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/home/thanhlam/Desktop/packages/packages/react/src/atoms/Text/index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="molecules.Select">
+      <metrics statements="67" coveredstatements="38" conditionals="53" coveredconditionals="23" methods="18" coveredmethods="11"/>
+      <file name="Select.tsx" path="/home/thanhlam/Desktop/packages/packages/react/src/molecules/Select/Select.tsx">
+        <metrics statements="67" coveredstatements="38" conditionals="53" coveredconditionals="23" methods="18" coveredmethods="11"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="34" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="38" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="49" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="53" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="66" count="33" type="stmt"/>
+        <line num="67" count="33" type="stmt"/>
+        <line num="68" count="33" type="stmt"/>
+        <line num="69" count="33" type="stmt"/>
+        <line num="72" count="33" type="stmt"/>
+        <line num="73" count="33" type="stmt"/>
+        <line num="75" count="33" type="stmt"/>
+        <line num="76" count="3" type="stmt"/>
+        <line num="77" count="3" type="stmt"/>
+        <line num="78" count="3" type="stmt"/>
+        <line num="81" count="33" type="stmt"/>
+        <line num="82" count="6" type="stmt"/>
+        <line num="85" count="33" type="stmt"/>
+        <line num="86" count="16" type="cond" truecount="2" falsecount="0"/>
+        <line num="89" count="33" type="stmt"/>
+        <line num="91" count="33" type="cond" truecount="2" falsecount="0"/>
+        <line num="92" count="3" type="stmt"/>
+        <line num="95" count="33" type="stmt"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="99" count="33" type="stmt"/>
+        <line num="100" count="0" type="stmt"/>
+        <line num="101" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="102" count="0" type="stmt"/>
+        <line num="105" count="0" type="stmt"/>
+        <line num="109" count="33" type="stmt"/>
+        <line num="110" count="24" type="stmt"/>
+        <line num="113" count="33" type="stmt"/>
+        <line num="114" count="17" type="cond" truecount="2" falsecount="2"/>
+        <line num="115" count="0" type="stmt"/>
+        <line num="117" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="118" count="0" type="stmt"/>
+        <line num="123" count="33" type="stmt"/>
+        <line num="124" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="125" count="0" type="stmt"/>
+        <line num="126" count="0" type="stmt"/>
+        <line num="129" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="130" count="0" type="stmt"/>
+        <line num="133" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="134" count="0" type="stmt"/>
+        <line num="137" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="138" count="0" type="stmt"/>
+        <line num="142" count="33" type="stmt"/>
+        <line num="179" count="18" type="stmt"/>
+        <line num="180" count="18" type="stmt"/>
+        <line num="182" count="18" type="stmt"/>
+        <line num="184" count="18" type="stmt"/>
+        <line num="189" count="18" type="stmt"/>
+        <line num="199" count="0" type="stmt"/>
+        <line num="200" count="0" type="stmt"/>
+        <line num="202" count="3" type="stmt"/>
+        <line num="208" count="18" type="cond" truecount="2" falsecount="0"/>
+        <line num="209" count="3" type="stmt"/>
+        <line num="211" count="15" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

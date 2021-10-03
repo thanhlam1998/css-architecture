@@ -1030,7 +1030,7 @@
     "@babel/plugin-transform-react-jsx-development" "^7.14.5"
     "@babel/plugin-transform-react-pure-annotations" "^7.14.5"
 
-"@babel/preset-typescript@^7.10.s4", "@babel/preset-typescript@^7.12.7", "@babel/preset-typescript@^7.15.0", "@babel/preset-typescript@^7.3.3", "@babel/preset-typescript@^7.8.3":
+"@babel/preset-typescript@^7.10.4", "@babel/preset-typescript@^7.12.7", "@babel/preset-typescript@^7.15.0", "@babel/preset-typescript@^7.3.3", "@babel/preset-typescript@^7.8.3":
   version "7.15.0"
   resolved "https://registry.yarnpkg.com/@babel/preset-typescript/-/preset-typescript-7.15.0.tgz#e8fca638a1a0f64f14e1119f7fe4500277840945"
   integrity sha512-lt0Y/8V3y06Wq/8H/u0WakrqciZ7Fz7mwPDHWUJAXlABL5hiUG42BNlRXiELNjeWjO5rWmnNKlx+yzJvxezHow==
@@ -2408,6 +2408,28 @@
   integrity sha512-AU7kwFxreVd6OAXcAFlKSmZquiRUU0FvYm44k1Y1QbK7Co4m0aqfGMhjykIeQp/H6rcl+nFmj0zfdUcGVs9Dew==
   dependencies:
     "@sinonjs/commons" "^1.7.0"
+
+"@storybook/addon-a11y@^6.3.9":
+  version "6.3.9"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-6.3.9.tgz#c703f7d1faeabf14f61e0cb993ae2512cd644374"
+  integrity sha512-C93lZY9RdCYvtRimDIl7Es/QwfgTAfY6VZQcUupzVRwAAsf5Do2L+dcLpF7x8NRcDVnSIzfWLIllFiM7D9A/qg==
+  dependencies:
+    "@storybook/addons" "6.3.9"
+    "@storybook/api" "6.3.9"
+    "@storybook/channels" "6.3.9"
+    "@storybook/client-api" "6.3.9"
+    "@storybook/client-logger" "6.3.9"
+    "@storybook/components" "6.3.9"
+    "@storybook/core-events" "6.3.9"
+    "@storybook/theming" "6.3.9"
+    axe-core "^4.2.0"
+    core-js "^3.8.2"
+    global "^4.4.0"
+    lodash "^4.17.20"
+    react-sizeme "^3.0.1"
+    regenerator-runtime "^0.13.7"
+    ts-dedent "^2.0.0"
+    util-deprecate "^1.0.2"
 
 "@storybook/addon-knobs@^6.3.1":
   version "6.3.1"
@@ -4081,6 +4103,11 @@ aws4@^1.8.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
+
+axe-core@^4.2.0:
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.3.3.tgz#b55cd8e8ddf659fe89b064680e1c6a4dceab0325"
+  integrity sha512-/lqqLAmuIPi79WYfRpy2i8z+x+vxU3zX2uAm0gs1q52qTuKwolOj1P8XbufpXcsydrpKx2yGn2wzAnxCMV86QA==
 
 babel-jest@^27.2.4:
   version "27.2.4"
