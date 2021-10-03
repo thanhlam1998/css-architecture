@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Select } from "@ds.e/react";
+import { Select } from "@ds.jindo/react";
 
-import "@ds.e/scss/lib/Utilities.css";
-import "@ds.e/scss/lib/Text.css";
-import "@ds.e/scss/lib/Margin.css";
-import "@ds.e/scss/lib/Select.css";
-import "@ds.e/scss/lib/global.css";
+import "@ds.jindo/scss/lib/Utilities.css";
+import "@ds.jindo/scss/lib/Text.css";
+import "@ds.jindo/scss/lib/Margin.css";
+import "@ds.jindo/scss/lib/Select.css";
+import "@ds.jindo/scss/lib/global.css";
 
 const options = [
   {

@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import "@ds.e/scss/lib/Select.css";
+import "@ds.jindo/scss/lib/Select.css";
 declare const _default: {
     title: string;
     decorators: import("@storybook/addons").DecoratorFunction<unknown>[];

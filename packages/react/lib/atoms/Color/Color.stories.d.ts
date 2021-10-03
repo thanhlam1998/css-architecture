@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import "@ds.e/scss/lib/Utilities.css";
+import "@ds.jindo/scss/lib/Utilities.css";
 declare const _default: {
     title: string;
 };
