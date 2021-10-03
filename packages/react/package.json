@@ -9,11 +9,14 @@
   "devDependencies": {
     "@babel/preset-env": "^7.15.6",
     "@babel/preset-react": "^7.14.5",
-    "@babel/preset-typescript": "^7.15.0",
+    "@babel/preset-typescript": "^7.10.s4",
+    "@storybook/preset-typescript": "^3.0.0",
+    "@storybook/react": "^6.3.9",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.1",
     "@types/jest": "^27.0.2",
     "@types/react": "^17.0.26",
+    "babel-loader": "^8.2.2",
     "jest": "^27.2.4",
     "rollup": "^2.57.0",
     "rollup-plugin-typescript2": "^0.30.0",
@@ -23,6 +26,8 @@
     "build": "rollup -c",
     "dev": "yarn build --watch",
     "test": "jest --verbose",
-    "test:watch": "yarn test --watch"
+    "test:watch": "yarn test --watch",
+    "start-storybook": "start-storybook",
+    "build-storybook": "build-storybook"
   }
 }
