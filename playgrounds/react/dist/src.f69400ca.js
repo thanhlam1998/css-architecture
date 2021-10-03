@@ -29760,6 +29760,32 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+const KEYS = ["Enter", " ", "ArrowDown"];
+
+const getNextOptionIndex = (currentIndex, options) => {
+  if (currentIndex === null) {
+    return 0;
+  }
+
+  if (currentIndex === options.length - 1) {
+    return 0;
+  }
+
+  return currentIndex + 1;
+};
+
+const getPreviousOptionIndex = (currentIndex, options) => {
+  if (currentIndex === null) {
+    return 0;
+  }
+
+  if (currentIndex === 0) {
+    return options.length - 1;
+  }
+
+  return currentIndex - 1;
+};
+
 const Select = ({
   options = [],
   label = "Please select an options...",
@@ -29768,6 +29794,8 @@ const Select = ({
 }) => {
   const [isOpen, setIsOpen] = (0, _react.useState)(false);
   const [selectedIndex, setSelectedIndex] = (0, _react.useState)(null);
+  const [highlightedIndex, setHighlightedIndex] = (0, _react.useState)(null);
+  const [optionRefs, setOptionRefs] = (0, _react.useState)([]);
   const labelRef = (0, _react.useRef)(null);
   const [overlayTop, setOverlayTop] = (0, _react.useState)(0);
 
@@ -29790,10 +29818,60 @@ const Select = ({
     selectedOption = options[selectedIndex];
   }
 
+  const highlightOption = optionIndex => {
+    setHighlightedIndex(optionIndex);
+  };
+
+  const onButtonKeyDown = event => {
+    event.preventDefault();
+
+    if (KEYS.includes(event.key)) {
+      setIsOpen(true); // set focus on the list item
+
+      highlightOption(0);
+    }
+  };
+
+  (0, _react.useEffect)(() => {
+    setOptionRefs(options.map(_ => (0, _react.createRef)()));
+  }, [options.length]);
+  (0, _react.useEffect)(() => {
+    if (highlightedIndex !== null && isOpen) {
+      const ref = optionRefs[highlightedIndex];
+
+      if (ref && ref.current) {
+        ref.current.focus();
+      }
+    }
+  }, [isOpen, highlightedIndex]);
+
+  const onOptionKeydown = event => {
+    if (event.key === "Escape") {
+      setIsOpen(false);
+      return;
+    }
+
+    if (event.key === "ArrowDown") {
+      highlightOption(getNextOptionIndex(highlightedIndex, options));
+    }
+
+    if (event.key === "ArrowUp") {
+      highlightOption(getPreviousOptionIndex(highlightedIndex, options));
+    }
+
+    if (event.key == "Enter") {
+      onOptionSelected(options[highlightedIndex], highlightedIndex);
+    }
+  };
+
   return _react.default.createElement("div", {
     className: "dse-select"
   }, _react.default.createElement("button", {
+    "aria-haspopup": true,
+    "aria-expanded": isOpen ? true : undefined,
+    "aria-controls": "dse-select-list",
     ref: labelRef,
+    onKeyDown: onButtonKeyDown,
     className: "dse-select__label",
     onClick: onLabelClick
   }, _react.default.createElement(_Text.default, null, selectedOption === null ? label : selectedOption.label), _react.default.createElement("svg", {
@@ -29810,19 +29888,31 @@ const Select = ({
     strokeWidth: 2,
     d: "M19 9l-7 7-7-7"
   }))), isOpen && _react.default.createElement("ul", {
+    role: "menu",
     style: {
       top: overlayTop
     },
     className: "dse-select__overlay"
   }, options.map((option, optionIndex) => {
     const isSelected = selectedIndex === optionIndex;
+    const isHighlighted = highlightedIndex === optionIndex;
+    const ref = optionRefs[optionIndex];
     const renderOptionProps = {
+      ref,
       option,
       isSelected,
       getOptionRecommendedProps: (overrideProps = {}) => {
         return {
-          className: `dse-select__option ${isSelected ? "dse-select__option--select" : ""}`,
+          ref: ref,
+          role: "menuitemradio",
+          "aria-label": option.label,
+          "aria-checked": isSelected ? true : undefined,
+          className: `dse-select__option ${isSelected ? "dse-select__option--select" : ""} ${isHighlighted ? "dse-select__option--highlighted" : ""}`,
           key: option.value,
+          tabIndex: isHighlighted ? -1 : 0,
+          onMouseEnter: () => highlightOption(optionIndex),
+          onMouseLeave: () => highlightOption(null),
+          onKeyDown: onOptionKeydown,
           onClick: () => onOptionSelected(option, optionIndex),
           ...overrideProps
         };
@@ -29833,10 +29923,7 @@ const Select = ({
       return renderOption(renderOptionProps);
     }
 
-    return _react.default.createElement("li", {
-      className: `dse-select__option ${isSelected ? "dse-select__option--select" : ""}`,
-      onClick: () => onOptionSelected(option, optionIndex),
-      key: option.value
+    return _react.default.createElement("li", { ...renderOptionProps.getOptionRecommendedProps()
     }, _react.default.createElement(_Text.default, null, option.label), isSelected && _react.default.createElement("svg", {
       widths: "1rem",
       height: "1rem",
@@ -30058,7 +30145,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36679" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33269" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
