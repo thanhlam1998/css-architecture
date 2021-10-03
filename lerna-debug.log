@@ -1,6 +1,6 @@
-39 error Error: Command failed with exit code 128: git add -- packages/react/package.json playgrounds/react/package.json packages/foundation/package.json packages/scss/package.json lerna.json
-39 error fatal: Pathspec 'packages/scss/package.json' is in submodule 'packages/scss'
-39 error     at makeError (/home/thanhlam/Desktop/packages/node_modules/execa/lib/error.js:60:11)
-39 error     at handlePromise (/home/thanhlam/Desktop/packages/node_modules/execa/index.js:118:26)
-39 error     at processTicksAndRejections (internal/process/task_queues.js:95:5)
-39 error     at async Promise.all (index 0)
+48 error Error: Command failed with exit code 128: git add -- packages/foundation/package.json packages/scss/package.json playgrounds/react/package.json packages/react/package.json lerna.json
+48 error fatal: Pathspec 'packages/scss/package.json' is in submodule 'packages/scss'
+48 error     at makeError (/home/thanhlam/Desktop/css-architecture/node_modules/execa/lib/error.js:60:11)
+48 error     at handlePromise (/home/thanhlam/Desktop/css-architecture/node_modules/execa/index.js:118:26)
+48 error     at processTicksAndRejections (internal/process/task_queues.js:95:5)
+48 error     at async Promise.all (index 0)
