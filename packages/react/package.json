@@ -3,6 +3,9 @@
   "version": "0.7.3",
   "main": "lib/index.js",
   "license": "MIT",
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "react": "^17.0.2"
   },
