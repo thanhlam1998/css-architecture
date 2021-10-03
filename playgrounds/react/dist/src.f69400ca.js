@@ -29870,6 +29870,7 @@ const Select = ({
     "aria-haspopup": true,
     "aria-expanded": isOpen ? true : undefined,
     "aria-controls": "dse-select-list",
+    "data-testid": "DseSelectButton",
     ref: labelRef,
     onKeyDown: onButtonKeyDown,
     className: "dse-select__label",
@@ -29887,12 +29888,13 @@ const Select = ({
     strokeLinejoin: "round",
     strokeWidth: 2,
     d: "M19 9l-7 7-7-7"
-  }))), isOpen && _react.default.createElement("ul", {
+  }))), _react.default.createElement("ul", {
     role: "menu",
+    id: "dse-select-list",
     style: {
       top: overlayTop
     },
-    className: "dse-select__overlay"
+    className: `dse-select__overlay ${isOpen ? "dse-select__overlay--open" : ""}`
   }, options.map((option, optionIndex) => {
     const isSelected = selectedIndex === optionIndex;
     const isHighlighted = highlightedIndex === optionIndex;
@@ -30145,7 +30147,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33269" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42553" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -565,6 +565,7 @@
   background-color: var(--dse-form-bg-color, #fff);
   border: 1px solid var(--dse-form-border-color, #f1f2f3);
   box-shadow: 0 4px 11px rgba(157, 157, 157, 0.21);
+  display: none;
   list-style-type: none;
   position: absolute;
   width: 100%;
@@ -588,6 +589,10 @@
 .dse-select__option--select {
   background-color: var(--dse-form-bg-option-selected, #5ece7b);
   color: var(--dse-form-color-option-selected, #fff);
+}
+
+.dse-select__overlay--open {
+  display: block;
 }
 
 /* -------------------------------------------- */
